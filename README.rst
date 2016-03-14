@@ -131,6 +131,25 @@ the Bourne shell (sh)                    ``. util/quickstart/setchplenv.sh``
 
    b) Repeat steps 1-7 above, but in Step 2, use ``util/setchplenv.*``
       instead of ``util/quickstart/setchplenv.*``
+    
+    Making chapel installation global
+        After a successful installation. You will realise that when you start a new session,
+        you will have to setup the environment from the beginning to continuing working with chapel.
+        To make the changes global do the following:
+        a) Setting the CHPL_HOME variable.
+            Open the file ~/.bashrc and set your CHPL_HOME variable to your chapel top directory.
+            To do this type in the terminal:
+            sudo gedit ~/.bashrc
+            //Then at the end of the file type
+            export CHPL_HOME=$chapel_top_level_directory
+            This will set the CHPL_HOME variable everytime a new terminal opens
+            
+        b)  Making chpl global.
+            Go to $CHPL_HOME/bin/linux64/ and copy chpl.
+            Paste chpl in /usr/bin/ -Note to do this you must have root access privilege. Type
+            sudo nautilus /usr/bin/ -This opens /usr/bin/ and allows you to paste.
+    With that done, your chapel installation is global and you don't have to reinstall to start a new session
+        
 
    This will set up your environment to use Chapel in the preferred
    configuration.  Making this configuration will involve building one
